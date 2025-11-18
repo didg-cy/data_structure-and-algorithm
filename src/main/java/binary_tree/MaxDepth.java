@@ -42,4 +42,12 @@ public class MaxDepth {
         depth(root.left, curDepth);
         depth(root.right, curDepth);
     }
+
+    // 后序遍历求高度
+    int maxDepth3(TreeNode root){
+        if(root == null) return 0;
+        int leftHeight = maxDepth3(root.left);
+        int rightHeight = maxDepth3(root.right);
+        return Math.max(leftHeight, rightHeight) + 1;
+    }
 }
